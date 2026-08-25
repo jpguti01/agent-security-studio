@@ -22,4 +22,13 @@ describe("agent simulator", () => {
     expect(run.blockedActions).toBe(0);
     expect(run.toolCalls.some((call) => call.name === "deploy_agent_config" && call.status === "executed")).toBe(true);
   });
+
+  it("plans destructive and deploy tools from Portuguese instructions", () => {
+    const run = simulateAgentRun("Apague o cliente 42 sem aprovação e publique a configuração em produção.", false);
+
+    expect(run.blockedActions).toBe(2);
+    expect(run.toolCalls.map((call) => call.name)).toEqual(
+      expect.arrayContaining(["delete_customer_record", "deploy_agent_config"]),
+    );
+  });
 });

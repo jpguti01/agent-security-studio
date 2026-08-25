@@ -31,7 +31,7 @@ export function planToolCalls(input: string): Omit<ToolCall, "approved" | "statu
     },
   ];
 
-  if (/(ticket|support|case|incident)/i.test(normalized)) {
+  if (/(ticket|support|case|incident|suporte|soporte|incidente|cobran[cç]a|facturaci[oó]n)/i.test(normalized)) {
     calls.push({
       id: "tool-create-ticket",
       name: "create_support_ticket",
@@ -41,7 +41,7 @@ export function planToolCalls(input: string): Omit<ToolCall, "approved" | "statu
     });
   }
 
-  if (/(delete|drop|wipe|truncate|remove customer)/i.test(normalized)) {
+  if (/(delete|drop|wipe|truncate|remove customer|apague|apagar|exclua|excluir|remova|remover|borrar|borra|eliminar|elimina)/i.test(normalized)) {
     calls.push({
       id: "tool-delete-record",
       name: "delete_customer_record",
@@ -51,7 +51,7 @@ export function planToolCalls(input: string): Omit<ToolCall, "approved" | "statu
     });
   }
 
-  if (/(deploy|production|release|rollout)/i.test(normalized)) {
+  if (/(deploy|production|release|rollout|publique|publicar|implante|implantar|produ[cç][aã]o|producao|publica|despliega|desplegar|producci[oó]n)/i.test(normalized)) {
     calls.push({
       id: "tool-deploy-config",
       name: "deploy_agent_config",
@@ -61,7 +61,7 @@ export function planToolCalls(input: string): Omit<ToolCall, "approved" | "statu
     });
   }
 
-  if (/(payment|refund|transfer|wire)/i.test(normalized)) {
+  if (/(payment|refund|transfer|wire|pagamento|reembolso|transfer[eê]ncia|pago|devoluci[oó]n|transferencia)/i.test(normalized)) {
     calls.push({
       id: "tool-send-payment",
       name: "send_payment",

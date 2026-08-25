@@ -1,6 +1,6 @@
 # Agent Security Studio
 
-A flagship AI engineering project for testing agentic systems before production. It combines LLM security checks, tool approval gates, RAG evaluation, trace inspection, and GitHub portfolio auditing in one interactive studio.
+A flagship AI engineering project for testing agentic systems before production. It combines LLM security checks, tool approval gates, RAG evaluation, trace inspection, GitHub portfolio auditing, and a multilingual decision-first interface in one interactive studio.
 
 The project is built as a public-safe portfolio application: all examples are synthetic, no real credentials are included, and the system runs locally without paid APIs.
 
@@ -11,6 +11,13 @@ https://jpguti01.github.io/agent-security-studio/
 ## Positioning
 
 Most AI demos show that an agent can act. This studio asks the production question: should the agent be allowed to act, what evidence supports the answer, and what risks were observed along the way?
+
+## Experience
+
+- Decision-first interface: the first screen explains the risk, verdict, and next evidence.
+- Multilingual UI: Portuguese, English, and Spanish.
+- Immersive product surface: scenario, instruction, approval gate, metrics, findings, and evidence stay connected.
+- Public-safe demo: all examples are synthetic and run without private data or paid APIs.
 
 ## Core Modules
 

@@ -9,3 +9,5 @@ vite.config.d.ts
 !.env.example
 npm-debug.log*
 .DS_Store
+*.png
+.chrome-cdp/
