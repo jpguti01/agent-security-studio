@@ -4,6 +4,10 @@ A flagship AI engineering project for testing agentic systems before production.
 
 The project is built as a public-safe portfolio application: all examples are synthetic, no real credentials are included, and the system runs locally without paid APIs.
 
+## Live Demo
+
+https://jpguti01.github.io/agent-security-studio/
+
 ## Positioning
 
 Most AI demos show that an agent can act. This studio asks the production question: should the agent be allowed to act, what evidence supports the answer, and what risks were observed along the way?
