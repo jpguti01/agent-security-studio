@@ -1,0 +1,566 @@
+:root {
+  color-scheme: dark;
+  --bg: #101112;
+  --surface: #17191c;
+  --surface-2: #20242a;
+  --surface-3: #282e36;
+  --line: #343b45;
+  --text: #f5f7fa;
+  --muted: #a8b1bf;
+  --blue: #4fb5ff;
+  --green: #50d58c;
+  --amber: #f2bd55;
+  --red: #ff6b6b;
+  --violet: #a78bfa;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--text);
+  font-family:
+    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  border: 0;
+}
+
+.app-shell {
+  width: min(1240px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 24px 0 48px;
+}
+
+.masthead,
+.brand-block,
+.masthead-actions,
+.panel-heading,
+.trace-title,
+.row-title,
+.repo-search {
+  display: flex;
+  align-items: center;
+}
+
+.masthead {
+  justify-content: space-between;
+  gap: 16px;
+  padding: 18px 0 22px;
+  border-bottom: 1px solid var(--line);
+}
+
+.brand-block {
+  gap: 14px;
+}
+
+.brand-mark {
+  display: grid;
+  width: 44px;
+  height: 44px;
+  place-items: center;
+  border: 1px solid #436174;
+  border-radius: 8px;
+  background: #15212a;
+  color: var(--blue);
+}
+
+.eyebrow {
+  margin: 0 0 5px;
+  color: var(--blue);
+  font-size: 0.76rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+h1 {
+  font-size: 1.7rem;
+  letter-spacing: 0;
+}
+
+h2 {
+  font-size: 1.08rem;
+  letter-spacing: 0;
+}
+
+h3 {
+  font-size: 0.95rem;
+  letter-spacing: 0;
+}
+
+.masthead-actions {
+  gap: 10px;
+}
+
+.primary-button,
+.ghost-button,
+.tabs button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 40px;
+  border-radius: 6px;
+  padding: 0 14px;
+  color: var(--text);
+  cursor: pointer;
+}
+
+.primary-button {
+  background: #236d54;
+}
+
+.primary-button:hover {
+  background: #2a805f;
+}
+
+.primary-button:disabled {
+  cursor: wait;
+  opacity: 0.65;
+}
+
+.ghost-button,
+.tabs button {
+  border: 1px solid var(--line);
+  background: var(--surface);
+}
+
+.ghost-button:hover,
+.tabs button:hover {
+  background: var(--surface-2);
+}
+
+.control-surface {
+  display: grid;
+  grid-template-columns: minmax(180px, 240px) minmax(0, 1fr) minmax(180px, 220px);
+  gap: 12px;
+  padding: 18px 0;
+}
+
+label {
+  display: grid;
+  gap: 8px;
+}
+
+label span {
+  color: var(--muted);
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+select,
+textarea,
+input {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: var(--surface);
+  color: var(--text);
+  outline: none;
+}
+
+select,
+input {
+  min-height: 42px;
+  padding: 0 12px;
+}
+
+textarea {
+  min-height: 86px;
+  resize: vertical;
+  padding: 12px;
+  line-height: 1.45;
+}
+
+.switch-control {
+  align-content: start;
+  grid-template-columns: auto 1fr;
+  gap: 10px;
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+}
+
+.switch-control input {
+  width: 18px;
+  height: 18px;
+  margin-top: 1px;
+  accent-color: var(--green);
+}
+
+.score-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.score-card,
+.panel,
+.trace-step,
+.eval-row,
+.finding,
+.empty-state {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+}
+
+.score-card {
+  padding: 14px;
+}
+
+.score-card span {
+  display: block;
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.score-card strong {
+  display: block;
+  margin-top: 8px;
+  font-size: 1.75rem;
+}
+
+.score-card.good strong,
+.pill.good,
+.score-badge.good {
+  color: var(--green);
+}
+
+.score-card.warn strong,
+.pill.warn,
+.score-badge.warn {
+  color: var(--amber);
+}
+
+.score-card.danger strong,
+.pill.danger,
+.score-badge.danger {
+  color: var(--red);
+}
+
+.score-card.neutral strong {
+  color: var(--blue);
+}
+
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.tabs button.active {
+  border-color: #527b90;
+  background: #192934;
+  color: var(--blue);
+}
+
+.workspace {
+  display: grid;
+  gap: 14px;
+}
+
+.overview-layout {
+  grid-template-columns: 1fr 1fr;
+}
+
+.panel {
+  padding: 16px;
+}
+
+.panel.wide {
+  grid-column: 1 / -1;
+}
+
+.panel-heading {
+  justify-content: space-between;
+  gap: 14px;
+  margin-bottom: 16px;
+}
+
+.threat-map {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(96px, 1fr));
+  gap: 10px;
+}
+
+.threat-node {
+  display: grid;
+  min-height: 116px;
+  align-content: space-between;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface-2);
+  padding: 12px;
+}
+
+.threat-node.lit {
+  border-color: #7b6235;
+  background: #221d16;
+}
+
+.threat-node span {
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+
+.threat-node strong {
+  font-size: 1.8rem;
+}
+
+.finding-list,
+.audit-list,
+.eval-list,
+.tool-table {
+  display: grid;
+  gap: 10px;
+}
+
+.finding {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px;
+}
+
+.finding p,
+.tool-row p,
+.trace-step p,
+.eval-row p,
+.empty-state p {
+  margin-top: 5px;
+  color: var(--muted);
+  line-height: 1.45;
+}
+
+.finding span {
+  align-self: start;
+  border-radius: 999px;
+  background: var(--surface-2);
+  padding: 4px 9px;
+  color: var(--muted);
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.finding.critical {
+  border-color: #7d3535;
+}
+
+.finding.high {
+  border-color: #7a5132;
+}
+
+.finding.medium {
+  border-color: #665732;
+}
+
+.tool-row,
+.eval-row {
+  display: grid;
+  grid-template-columns: minmax(260px, 1fr) 90px 90px minmax(180px, 0.8fr);
+  gap: 12px;
+  align-items: center;
+  border-bottom: 1px solid var(--line);
+  padding: 12px 0;
+}
+
+.tool-row:last-child {
+  border-bottom: 0;
+}
+
+.pill,
+.score-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 28px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--surface-2);
+  padding: 0 10px;
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.pill.critical {
+  color: var(--red);
+}
+
+.pill.high {
+  color: var(--amber);
+}
+
+.pill.medium {
+  color: var(--violet);
+}
+
+.pill.low {
+  color: var(--green);
+}
+
+.trace-layout {
+  grid-template-columns: 1fr;
+}
+
+.trace-step {
+  display: grid;
+  grid-template-columns: 34px 1fr;
+  gap: 12px;
+  padding: 14px;
+}
+
+.trace-icon {
+  display: grid;
+  width: 30px;
+  height: 30px;
+  place-items: center;
+  border-radius: 999px;
+  background: var(--surface-2);
+  color: var(--green);
+}
+
+.trace-step.risk .trace-icon {
+  color: var(--amber);
+}
+
+.trace-step.blocked .trace-icon {
+  color: var(--red);
+}
+
+.trace-title {
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.trace-title span,
+small {
+  color: var(--muted);
+  font-size: 0.78rem;
+}
+
+.rag-layout,
+.repo-layout {
+  grid-template-columns: 1fr;
+}
+
+.rag-summary {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.rag-summary .score-card {
+  background: var(--surface-2);
+}
+
+.eval-row {
+  grid-template-columns: minmax(0, 1fr) 84px;
+  padding: 14px;
+}
+
+.row-title {
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.repo-search {
+  gap: 10px;
+}
+
+.repo-search input {
+  flex: 1;
+}
+
+.score-badge {
+  min-width: 48px;
+  min-height: 38px;
+  font-size: 1rem;
+}
+
+.empty-state {
+  display: grid;
+  justify-items: start;
+  gap: 8px;
+  padding: 18px;
+  color: var(--green);
+}
+
+.empty-state p {
+  color: var(--muted);
+}
+
+.error-text {
+  margin-top: 10px;
+  color: var(--red);
+}
+
+@media (max-width: 900px) {
+  .masthead,
+  .masthead-actions,
+  .control-surface {
+    align-items: stretch;
+    grid-template-columns: 1fr;
+  }
+
+  .masthead {
+    flex-direction: column;
+  }
+
+  .score-grid,
+  .overview-layout,
+  .threat-map,
+  .rag-summary {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .tool-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .app-shell {
+    width: min(100% - 20px, 1240px);
+  }
+
+  .score-grid,
+  .threat-map,
+  .rag-summary {
+    grid-template-columns: 1fr;
+  }
+
+  .repo-search,
+  .row-title,
+  .trace-title {
+    align-items: stretch;
+    flex-direction: column;
+  }
+}

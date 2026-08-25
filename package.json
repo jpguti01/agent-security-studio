@@ -1,0 +1,40 @@
+{
+  "name": "agent-security-studio",
+  "version": "0.1.0",
+  "description": "A flagship AI agent security studio for risk simulation, tool approvals, RAG evaluation, traces, and GitHub portfolio audits.",
+  "type": "module",
+  "private": false,
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "test": "vitest run"
+  },
+  "keywords": [
+    "ai-agents",
+    "llm-security",
+    "prompt-injection",
+    "rag-evaluation",
+    "mcp",
+    "observability"
+  ],
+  "author": "Joao Pedro Gutierrez",
+  "license": "MIT",
+  "dependencies": {
+    "@vitejs/plugin-react": "^6.1.0",
+    "lucide-react": "^0.468.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "vite": "^8.2.2"
+  },
+  "devDependencies": {
+    "@types/node": "^26.3.0",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "typescript": "^5.6.3",
+    "vitest": "^4.1.11"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
